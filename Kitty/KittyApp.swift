@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct KittyApp: App {
+    @StateObject var cartManager = CartManager()
+  
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView(product: productList[0])
+                .environmentObject(cartManager)
         }
     }
 }
